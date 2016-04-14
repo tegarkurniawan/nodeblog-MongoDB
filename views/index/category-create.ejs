@@ -1,0 +1,22 @@
+<%- include layouts/header.ejs %>
+<%- include layouts/nav.ejs %>
+
+<div class="container">
+	<h1>Add Category</h1>
+
+	<br><br>
+	<form method="POST" action="/category/store">
+		
+		<div class="form-group">
+			<input type="text" name="name" placeholder="Name..." class="form-control">
+		</div>
+
+		<div class="form-group">
+			<input type="submit" name="submit" value="Submit" class="btn btn-success">
+		</div>
+
+	</form>
+
+</div>
+
+<%- include layouts/footer.ejs %>

@@ -1,0 +1,33 @@
+<%- include layouts/header.ejs %>
+<%- include layouts/nav.ejs %>
+
+<div class="container">
+	<h1>Category</h1>
+
+	<br><br>
+	<a href="/category/create" class="btn btn-primary">Add Category</a>
+	<br><br>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th colspan="3">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tbody>
+			<% categorys.forEach(function (category) { %>
+				<tr>
+					<td><%= category.name %></td>
+					<td><a href="/category/edit/<%= category.id %>" class="btn btn-success">Edit</a></td>
+					<td><a href="/category/destroy/<%= category.id %>" class="btn btn-danger">Delete</a></td>
+				</tr>
+			<% }); %>
+		</tbody>
+		</tbody>
+	</table>
+
+</div>
+
+<%- include layouts/footer.ejs %>

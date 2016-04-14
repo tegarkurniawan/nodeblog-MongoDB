@@ -1,0 +1,39 @@
+<%- include layouts/header.ejs %>
+<%- include layouts/nav.ejs %>
+
+<div class="container">
+	<h1>Artikel</h1>
+
+	<br><br>
+	<a href="/artikel/create" class="btn btn-primary">Add Artikel</a>
+	<br><br>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>title</th>
+				<th>Description</th>
+				<th>Category</th>
+				<th>Photo</th>
+				<th colspan="3">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tbody>
+			<% artikels.forEach(function (artikel) { %>
+				<tr>
+					<td><%= artikel.title %></td>
+					<td><%= artikel.description %></td>
+					<td><%= artikel.category_id.name %></td>
+					<td><img class="img-circle" src="/files/<%= artikel.photo %>" width="200px" height="200px"> </td>
+					<td><a href="/artikel/edit/<%= artikel.id %>" class="btn btn-success">Edit</a></td>
+					<td><a href="/artikel/destroy/<%= artikel.id %>" class="btn btn-danger">Delete</a></td>
+				</tr>
+			<% }); %>
+		</tbody>
+		</tbody>
+	</table>
+
+</div>
+
+<%- include layouts/footer.ejs %>
